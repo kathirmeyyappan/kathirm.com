@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (!hasHovered) {
                 profileImage.classList.add("flash-border");
             }
-        }, 4000);
+        }, 500);
     }
 
     profileImage.addEventListener("mouseover", function() {

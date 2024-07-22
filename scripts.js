@@ -41,12 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
             for (let i = 0; i < logos.length; i++) {
                 logos[i].style.pointerEvents = 'none';
             }
-            
+
+            if (overlay.style.opacity == '1') {
+                c = (c + 1) % pfps.length;
+                profileImage.src = pfps[c]; // next pfp
+            }      
             overlay.style.opacity = '0'; // hide overlay
             profileImage.style.cursor = 'pointer';
-            
-            c = (c + 1) % pfps.length;
-            profileImage.src = pfps[c]; // next pfp
         }
     });
 

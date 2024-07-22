@@ -3,7 +3,7 @@ const body = document.getElementById("body")
 const overlay = document.querySelector('.overlay');
 var hasClickedProfile = false;
 
-let c = 0
+let c = 0;
 const pfps = [
     'images/kathir.jpg', 
     'images/bebop.gif', 
@@ -11,19 +11,21 @@ const pfps = [
     'images/patrick.gif',
     'images/shrek.gif', 
     'images/subway-surfers.gif'
-]
+];
 
 function startFlashTimer() {
     flashTimer = setTimeout(function() {
         if (!hasClickedProfile) {
             profileImage.classList.add("flash-border");
         }
-    }, 500);
+    }, 3000);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     
     // preload images
+    const img = new Image();
+    img.src = 'images/error.gif';
     pfps.forEach(src => {
         const img = new Image();
         img.src = src;

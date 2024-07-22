@@ -122,13 +122,13 @@ img.inline {
 }
 
 @keyframes flash-border {
-    0% { border-color: #a8dadc;; }
+    0% { border-color: #a8dadc; }
     50% { border-color: #ff7f7f; }
-    100% { border-color: #a8dadc;; }
+    100% { border-color: #a8dadc; }
 }
 
 .flash-border {
-    animation: flash-border 2s infinite;
+    animation: flash-border 1s infinite;
 }
 
 .inline {

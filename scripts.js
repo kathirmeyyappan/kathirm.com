@@ -1,4 +1,5 @@
 const profileImage = document.getElementById('profileImage');
+const body = document.getElementById("body")
 const overlay = document.querySelector('.overlay');
 var hasClickedProfile = false;
 
@@ -32,26 +33,38 @@ document.addEventListener('DOMContentLoaded', () => {
     var profileImage = document.getElementById("profileImage");
     profileImage.style.cursor = 'pointer';
 
-    profileImage.addEventListener('mouseleave', () => {
-        overlay.style.opacity = '0'; // hide overlay
+    document.addEventListener('click', (e) => {
+        target = document.elementFromPoint(e.clientX, e.clientY);
+        if (target != profileImage && target.className != "inline") {
+            console.log("hey")
+            // remove collision for logos
+            logos = document.getElementsByClassName('inline');
+            for (let i = 0; i < logos.length; i++) {
+                logos[i].style.pointerEvents = 'none';
+            }
+
+            overlay.style.opacity = '0'; // hide overlay
+            profileImage.style.cursor = 'pointer';
+        }
     });
 
-    profileImage.addEventListener("click", function() {
-        hasClickedProfile = true;
-        clearTimeout(flashTimer);
-        profileImage.classList.remove("flash-border");
+    profileImage.addEventListener("click", () => {
+        if (profileImage.style.cursor == 'pointer') {
+            hasClickedProfile = true;
+            clearTimeout(flashTimer);
+            profileImage.classList.remove("flash-border");
 
-        c = (c + 1) % pfps.length
-        profileImage.src = pfps[c]; // next pfp
-        overlay.style.opacity = '1'; // add overlay
+            // add collision for logos
+            logos = document.getElementsByClassName('inline');
+            for (let i = 0; i < logos.length; i++) {
+                logos[i].style.pointerEvents = 'auto';
+            }
 
-        profileImage.style.cursor = 'default';
-    });
+            c = (c + 1) % pfps.length;
+            profileImage.src = pfps[c]; // next pfp
+            overlay.style.opacity = '1'; // add overlay
 
-    profileImage.addEventListener("mouseout", function() {
-        profileImage.style.cursor = 'pointer';
-        if (!hasClickedProfile) {
-            startFlashTimer();
+            profileImage.style.cursor = 'default';
         }
     });
 

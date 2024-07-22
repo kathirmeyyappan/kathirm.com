@@ -130,3 +130,7 @@ img.inline {
 .flash-border {
     animation: flash-border 2s infinite;
 }
+
+.inline {
+    pointer-events: none;
+}

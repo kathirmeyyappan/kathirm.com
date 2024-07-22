@@ -11,12 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlay = document.querySelector('.overlay');
 
     profileImage.addEventListener('mouseenter', () => {
-        profileImage.src = 'images/kathir.jpg'; // Change to your new image URL
-        overlay.style.opacity = '1'; // Show overlay
+        if (profileImage.src.includes('images/bebop.gif')) {
+            profileImage.src = 'images/kathir.jpg';
+        } else {
+            profileImage.src = 'images/bebop.gif';
+        }
+        overlay.style.opacity = '1';
     });
 
     profileImage.addEventListener('mouseleave', () => {
-        profileImage.src = 'images/bebop.gif'; // Revert to original image URL
         overlay.style.opacity = '0'; // Hide overlay
     });
 });

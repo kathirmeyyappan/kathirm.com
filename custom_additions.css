@@ -77,12 +77,13 @@ body {
     opacity: 0;
     transition: opacity var(--transition-time);
     pointer-events: none; 
-    padding-top: 30%;
+    padding-top: 18%;
     text-align: center;
 }
 
 .overlay-content {
     max-width: 800px;
+    z-index: 2000;
 }
 
 .profile-image-container {
@@ -100,7 +101,22 @@ body {
     pointer-events: auto; /* Enable interaction when visible */
 }
 
+.bigger-text {
+    font-family: 'Monospace', 'Courier New';
+    font-size: 1.9em;
+}
+.biggest-text {
+    font-family: 'Monospace', 'Courier New';
+    font-size: 2.3em;
+}
 .normal-text {
     font-family: 'Monospace', 'Courier New';
-    font-size: 1.5em;
+    font-size: 1.4em;
+}
+
+img.inline {
+    width: 2.3em;
+    height: 2.3em;
+    vertical-align: middle;
+    display: inline-block;
 }

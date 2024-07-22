@@ -10,8 +10,7 @@ const pfps = [
     'images/luffy.gif',
     'images/patrick.gif',
     'images/shrek.gif', 
-    'images/subway-surfers.gif',
-    'images/error.gif'
+    'images/subway-surfers.gif'
 ]
 
 function startFlashTimer() {
@@ -36,15 +35,18 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (e) => {
         target = document.elementFromPoint(e.clientX, e.clientY);
         if (target != profileImage && target.className != "inline") {
-            console.log("hey")
+
             // remove collision for logos
             logos = document.getElementsByClassName('inline');
             for (let i = 0; i < logos.length; i++) {
                 logos[i].style.pointerEvents = 'none';
             }
-
+            
             overlay.style.opacity = '0'; // hide overlay
             profileImage.style.cursor = 'pointer';
+            
+            c = (c + 1) % pfps.length;
+            profileImage.src = pfps[c]; // next pfp
         }
     });
 
@@ -60,8 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 logos[i].style.pointerEvents = 'auto';
             }
 
-            c = (c + 1) % pfps.length;
-            profileImage.src = pfps[c]; // next pfp
+            profileImage.src = 'images/error.gif'; // buffer pfp
             overlay.style.opacity = '1'; // add overlay
 
             profileImage.style.cursor = 'default';

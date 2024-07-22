@@ -10,12 +10,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const profileImage = document.getElementById('profileImage');
     const overlay = document.querySelector('.overlay');
 
+    let c = 0
+    const pfps = [
+        'images/kathir.jpg', 
+        'images/bebop.gif', 
+        'images/luffy.gif',
+        'images/patrick.gif',
+        'images/shrek.gif', 
+        'images/subway-surfers.gif',
+        'images/error.gif'
+    ]
+
     profileImage.addEventListener('mouseenter', () => {
-        if (profileImage.src.includes('images/bebop.gif')) {
-            profileImage.src = 'images/kathir.jpg';
-        } else {
-            profileImage.src = 'images/bebop.gif';
-        }
+        c = (c + 1) % pfps.length
+        profileImage.src = pfps[c];
         overlay.style.opacity = '1';
     });
 

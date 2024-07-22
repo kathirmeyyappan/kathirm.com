@@ -23,11 +23,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     profileImage.addEventListener('mouseenter', () => {
         c = (c + 1) % pfps.length
-        profileImage.src = pfps[c];
-        overlay.style.opacity = '1';
+        profileImage.src = pfps[c]; // next pfp
+
+        overlay.style.opacity = '1'; // add overlay
+    });
+
+    // preload images
+    pfps.forEach(src => {
+        const img = new Image();
+        img.src = src;
     });
 
     profileImage.addEventListener('mouseleave', () => {
-        overlay.style.opacity = '0'; // Hide overlay
+        overlay.style.opacity = '0'; // hide overlay
     });
 });

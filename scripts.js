@@ -1,4 +1,5 @@
 const profileImage = document.getElementById('profileImage');
+const notifBubble = document.getElementById('notifBubble')
 const body = document.getElementById("body")
 const overlay = document.querySelector('.overlay');
 var hasClickedProfile = false;
@@ -13,10 +14,15 @@ const pfps = [
     'images/subway-surfers.gif'
 ];
 
-function startFlashTimer() {
-    flashTimer = setTimeout(function() {
+function startNotifTimer() {
+    notifTimer = setTimeout(function() {
         if (!hasClickedProfile) {
-            profileImage.classList.add("flash-border");
+            notifBubble.classList.add("appear");
+        }
+    }, 1000);
+    notifTimer = setTimeout(function() {
+        if (!hasClickedProfile) {
+            notifBubble.classList.add("notif-bulge");
         }
     }, 3000);
 }
@@ -56,8 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
     profileImage.addEventListener("click", () => {
         if (profileImage.style.cursor == 'pointer') {
             hasClickedProfile = true;
-            clearTimeout(flashTimer);
-            profileImage.classList.remove("flash-border");
+            clearTimeout(notifTimer);
+            notifBubble.style.display = "none";
 
             // add collision for logos
             logos = document.getElementsByClassName('inline');
@@ -72,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    startFlashTimer();
+    startNotifTimer();
 });
 
 function btn_hover(element) {

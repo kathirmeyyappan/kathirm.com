@@ -97,8 +97,8 @@ body {
 }
 
 .profile-image-container:hover + .overlay {
-    opacity: 1; /* Fade in */
-    pointer-events: auto; /* Enable interaction when visible */
+    opacity: 1; 
+    pointer-events: auto;
 }
 
 .bigger-text {
@@ -128,5 +128,5 @@ img.inline {
 }
 
 .flash-border {
-    animation: flash-border 3s infinite;
+    animation: flash-border 2s infinite;
 }

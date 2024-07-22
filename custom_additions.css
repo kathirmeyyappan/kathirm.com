@@ -120,3 +120,13 @@ img.inline {
     vertical-align: middle;
     display: inline-block;
 }
+
+@keyframes flash-border {
+    0% { border-color: #a8dadc;; }
+    50% { border-color: #ff7f7f; }
+    100% { border-color: #a8dadc;; }
+}
+
+.flash-border {
+    animation: flash-border 3s infinite;
+}

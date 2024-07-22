@@ -38,3 +38,31 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.style.opacity = '0'; // hide overlay
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    var profileImage = document.getElementById("profileImage");
+    var hasHovered = false;
+    var flashTimer;
+
+    function startFlashTimer() {
+        flashTimer = setTimeout(function() {
+            if (!hasHovered) {
+                profileImage.classList.add("flash-border");
+            }
+        }, 5000);
+    }
+
+    profileImage.addEventListener("mouseover", function() {
+        hasHovered = true;
+        clearTimeout(flashTimer);
+        profileImage.classList.remove("flash-border");
+    });
+
+    profileImage.addEventListener("mouseout", function() {
+        if (!hasHovered) {
+            startFlashTimer();
+        }
+    });
+
+    startFlashTimer();
+});

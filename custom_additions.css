@@ -77,13 +77,13 @@ body {
     opacity: 0;
     transition: opacity var(--transition-time);
     pointer-events: none; 
-    padding-top: 18%;
+    padding-top: 0%;
     text-align: center;
 }
 
 .overlay-content {
     max-width: 800px;
-    z-index: 2000;
+    z-index: 1000;
 }
 
 .profile-image-container {
@@ -93,10 +93,10 @@ body {
 
 .profile-image-container .profile-image {
     position: relative;
-    z-index: 1001;
+    z-index: 1000;
 }
 
-.profile-image:hover + .overlay {
+.profile-image-container:hover + .overlay {
     opacity: 1; /* Fade in */
     pointer-events: auto; /* Enable interaction when visible */
 }

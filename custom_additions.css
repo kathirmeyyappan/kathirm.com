@@ -50,14 +50,14 @@ body {
     height: auto;
 }
 
-@keyframes notif-bulge {
+/* @keyframes notif-bulge {
     0% { transform: scale(1); }
     50% { transform: scale(1.3); }
     100% { transform: scale(1); }
 }
 .notif-bulge {
     animation: notif-bulge 2s infinite;
-}
+} */
 
 
 .profile-image:hover {

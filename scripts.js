@@ -20,11 +20,11 @@ function startNotifTimer() {
             notifBubble.classList.add("appear");
         }
     }, 1000);
-    notifTimer = setTimeout(function() {
-        if (!hasClickedProfile) {
-            notifBubble.classList.add("notif-bulge");
-        }
-    }, 3000);
+    // notifTimer = setTimeout(function() {
+    //     if (!hasClickedProfile) {
+    //         notifBubble.classList.add("notif-bulge");
+    //     }
+    // }, 3000);
 }
 
 document.addEventListener('DOMContentLoaded', () => {

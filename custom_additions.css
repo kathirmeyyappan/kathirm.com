@@ -25,7 +25,7 @@ body {
 }
 
 :root {
-    --notif-right: 185px;
+    --notif-right: 155px;
     --notif-top: 10px;
 }
 .notification-bubble {
@@ -41,13 +41,13 @@ body {
 }
 
 @keyframes appear {
-    0% { width: 0px; height: 0px;  }
-    100% { width: 50px; height: 50px; }
+    0% { transform: scale(0);  }
+    100% { transform: scale(1); }
 }
 .appear {
     animation: appear 1s ease-in;
-    width: 50px; 
-    height: 50px;
+    width: 100px; 
+    height: auto;
 }
 
 @keyframes notif-bulge {

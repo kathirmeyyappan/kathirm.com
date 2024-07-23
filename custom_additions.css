@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #d3e0ea;
+    background-color: #ffffff;
 }
 
 .profile-image {
@@ -16,7 +16,7 @@ body {
     height: 200px;
     object-fit: cover;
     margin-bottom: 30px;
-    border: 10px solid #a8dadc;
+    border: 10px solid #dddddd;
     transition: transform 0.2s;
 }
 
@@ -81,7 +81,7 @@ body {
 }
 
 .button {
-    background-color: #a8dadc; 
+    background-color: #dddddd; 
     border: none; 
     border-radius: 20px; 
     color: black;
@@ -93,7 +93,7 @@ body {
 }
 
 .button:hover {
-    background-color: #81b29a; 
+    background-color: #b0b0b0; 
 }
 
 .button img {

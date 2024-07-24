@@ -62,10 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
             overlay.style.opacity = '0'; // hide overlay
             profileImage.style.cursor = 'pointer';
 
-            if (c == 0) {
-                hasClickedProfile = false;
-                startNotifTimer();
-            }
+            hasClickedProfile = false;
+            startNotifTimer();
         }
     });
 

@@ -17,9 +17,10 @@ const pfps = [
 function startNotifTimer() {
     notifTimer = setTimeout(function() {
         if (!hasClickedProfile) {
+            notifBubble.style.display = "block";
             notifBubble.classList.add("appear");
         }
-    }, 1000);
+    }, 2000);
     // notifTimer = setTimeout(function() {
     //     if (!hasClickedProfile) {
     //         notifBubble.classList.add("notif-bulge");
@@ -36,6 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const img = new Image();
         img.src = src;
     });
+    ['linkedin', 'mail', 'mangalert', 'cv', 'github'].forEach((logo) => {
+        const img = new Image();
+        img.src = `images/${logo}-white.png`;
+    })
 
     var profileImage = document.getElementById("profileImage");
     profileImage.style.cursor = 'pointer';
@@ -53,9 +58,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (overlay.style.opacity == '1') {
                 c = (c + 1) % pfps.length;
                 profileImage.src = pfps[c]; // next pfp
-            }      
+            }
             overlay.style.opacity = '0'; // hide overlay
             profileImage.style.cursor = 'pointer';
+
+            if (c == 0) {
+                hasClickedProfile = false;
+                startNotifTimer();
+            }
         }
     });
 

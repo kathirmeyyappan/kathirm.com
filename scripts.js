@@ -9,25 +9,17 @@ let c = 0;
 const pfps = [
     'images/kathir.jpg', 
     'images/bebop.gif', 
-    'images/kathir.jpg',
     'images/luffy.gif',
-    'images/kathir.jpg',
     'images/patrick.gif',
-    'images/kathir.jpg',
     'images/shrek.gif', 
-    'images/kathir.jpg',
     'images/subway-surfers.gif'
 ];
 const titles = [
     'Kathir Meyyappan', 
-    'Spike Spiegel', 
-    'Kathir Meyyappan', 
+    'Spike Spiegel',  
     'Monkey D. Luffy',
-    'Kathir Meyyappan', 
     'Patrick Star',
-    'Kathir Meyyappan', 
-    'Shrek', 
-    'Kathir Meyyappan', 
+    'Shrek',
     '???'
 ]
 
@@ -75,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (overlay.style.opacity == '1') {
                 c = (c + 1) % pfps.length;
                 profileImage.src = pfps[c]; // next pfp
-                title.textContent = titles[c]
+                // title.textContent = titles[c]
             }
             overlay.style.opacity = '0'; // hide overlay
             profileImage.style.cursor = 'pointer';

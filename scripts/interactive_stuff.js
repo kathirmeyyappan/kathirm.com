@@ -14,14 +14,6 @@ const pfps = [
     'images/shrek.gif', 
     'images/subway-surfers.gif'
 ];
-const titles = [
-    'Kathir Meyyappan', 
-    'Spike Spiegel',  
-    'Monkey D. Luffy',
-    'Patrick Star',
-    'Shrek',
-    '???'
-]
 
 function startNotifTimer() {
     notifTimer = setTimeout(function() {
@@ -50,6 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const img = new Image();
         img.src = `images/${logo}-white.png`;
     })
+    logos = document.getElementsByClassName('inline');
+    for (let i = 0; i < logos.length; i++) {
+        const img = new Image();
+        img.src = `images/${logos[i].id}-white.png`;
+    }
 
     var profileImage = document.getElementById("profileImage");
     profileImage.style.cursor = 'pointer';
@@ -67,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (overlay.style.opacity == '1') {
                 c = (c + 1) % pfps.length;
                 profileImage.src = pfps[c]; // next pfp
-                // title.textContent = titles[c]
             }
             overlay.style.opacity = '0'; // hide overlay
             profileImage.style.cursor = 'pointer';

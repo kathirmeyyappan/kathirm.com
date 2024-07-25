@@ -9,13 +9,13 @@ let c = 0;
 const pfps = [
     'images/kathir.jpg', 
     'images/bebop.gif', 
-    'images/kathir3.jpg',
+    'images/kathir.jpg',
     'images/luffy.gif',
-    'images/kathir2.jpg',
+    'images/kathir.jpg',
     'images/patrick.gif',
     'images/kathir.jpg',
     'images/shrek.gif', 
-    'images/kathir3.jpg',
+    'images/kathir.jpg',
     'images/subway-surfers.gif'
 ];
 const titles = [

@@ -64,6 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (overlay.style.opacity == '1') {
                 c = (c + 1) % pfps.length;
                 profileImage.src = pfps[c]; // next pfp
+                if (c == 0) {
+                    title.textContent = "Kathir Meyyappan";
+                } else {
+                    title.textContent = '???';
+                }
             }
             overlay.style.opacity = '0'; // hide overlay
             profileImage.style.cursor = 'pointer';

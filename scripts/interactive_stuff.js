@@ -1,5 +1,6 @@
 const profileImage = document.getElementById('profileImage');
 const notifBubble = document.getElementById('notifBubble')
+let notifDisplay = 'block'
 const body = document.getElementById("body")
 const title = document.getElementById("title")
 const overlay = document.querySelector('.overlay');
@@ -18,7 +19,7 @@ const pfps = [
 function startNotifTimer() {
     notifTimer = setTimeout(function() {
         if (!hasClickedProfile) {
-            notifBubble.style.display = "block";
+            notifBubble.style.display = notifDisplay;
             notifBubble.classList.add("appear");
         }
     }, 2000);
@@ -66,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 profileImage.src = pfps[c]; // next pfp
                 if (c == 0) {
                     title.textContent = "Kathir Meyyappan";
+                    notifDisplay = 'none';
                 } else {
                     title.textContent = '???';
                 }

@@ -159,6 +159,7 @@ img.inline {
     height: 2.3em;
     vertical-align: middle;
     display: inline-block;
+    border-radius: 8px;
 }
 
 .inline {

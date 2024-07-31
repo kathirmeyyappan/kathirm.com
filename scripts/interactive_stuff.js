@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const img = new Image();
         img.src = src;
     });
-    ['linkedin', 'mail', 'mangalert', 'cv', 'github'].forEach((logo) => {
+    ['linkedin', 'mail', 'mangalert', 'resume', 'github'].forEach((logo) => {
         const img = new Image();
         img.src = `images/${logo}-white.png`;
     })
